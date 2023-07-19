@@ -1,21 +1,19 @@
 // import 'package:english/screen/aap_bar.dart';
-import 'package:english/focus_screens/f_desktop.dart';
+import 'package:english/Screens/aap_bar.dart';
+import 'package:english/components/Article.dart';
+import 'package:english/components/Focus.dart';
+import 'package:english/const/color.dart';
 import 'package:flutter/material.dart';
-import '../article_content.dart';
-import '../components/Article.dart';
-import '../components/Focus.dart';
-import '../const/color.dart';
-import '../constWidget/textwidget.dart';
-import 'aap_bar.dart';
+import '../../article_content.dart';
+import '../../constWidget/textwidget.dart';
+import '../focus_screens/f_desktop.dart';
+
 
 
 
 
 class DesktopPage extends StatefulWidget {
   const DesktopPage({super.key, required this.title});
-
-   
-
   final String title;
 
   @override
@@ -77,7 +75,8 @@ class _DesktopPageState extends State<DesktopPage> {
 
                           // Article in Focus mode
                           const SizedBox(width:30),
-                          InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_DesktopPage()));} ,child:Focas_container(focustext:"Focus Mode",height:mq.height* 0.090,width:mq.width* 0.10,fontsize:13))
+                          InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>
+                            f_DesktopPage(d_article_index: article_name_in, d_selected_index: selected_index, d_selected_index2: selected_index2)));} ,child:Focas_container(focustext:"Focus Mode",height:mq.height* 0.090,width:mq.width* 0.09,fontsize:13))
 
                         ],),
 

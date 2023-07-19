@@ -1,28 +1,26 @@
+import 'package:english/components/Article.dart';
 import 'package:flutter/material.dart';
 
-import '../article_content.dart';
-import '../components/Article.dart';
-import '../components/Focus.dart';
-import '../const/color.dart';
-import '../constWidget/textwidget.dart';
-
+import '../../article_content.dart';
+import '../../components/Focus.dart';
+import '../../const/color.dart';
+import '../../constWidget/textwidget.dart';
 
 
 class f_tabletPage extends StatefulWidget {
-  
 
+  f_tabletPage({required this.t_article_index,required this.t_selected_index,required this.t_selected_index2});
+  final int t_article_index;
+  int t_selected_index;
+  int t_selected_index2;
+  
   @override
   State<f_tabletPage> createState() => _f_tabletPageState();
 }
 
 class _f_tabletPageState extends State<f_tabletPage> {
-  double textsize=20;
-  int selected_index=3;
-  int selected_index2=0;
-  
-  int article_name_in=0;
-  
 
+  double textsize=20;
   
 
   @override
@@ -44,9 +42,9 @@ class _f_tabletPageState extends State<f_tabletPage> {
                       Row(
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                         Article_image(height:mq.height*0.15,width:mq.width*0.20,imgurl: articles[article_name_in]['article_image']),
+                         Article_image(height:mq.height*0.15,width:mq.width*0.20,imgurl: articles[widget.t_article_index]['article_image']),
                           const SizedBox(width:25),
-                          textwidget(articles[article_name_in]['article_name'],40, FontWeight.bold, textcolor),
+                          textwidget(articles[widget.t_article_index]['article_name'],40, FontWeight.bold, textcolor),
                           //  const SizedBox(width:30)
 
                         ],),
@@ -59,17 +57,17 @@ class _f_tabletPageState extends State<f_tabletPage> {
                             Row(
                                   children:[
                                   FloatingActionButton(elevation: 0.0,backgroundColor:
-                                  selected_index2==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                      onPressed:(){setState(() {selected_index2=1;textsize=18;});},
+                                  widget.t_selected_index2 ==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                      onPressed:(){setState(() {widget.t_selected_index2=1;textsize=18;});},
                                       child: textwidget("A", 18, FontWeight.w700, Colors.black)),
                                     
                                   FloatingActionButton(elevation: 0.0,backgroundColor:
-                                  selected_index2==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                      onPressed:(){setState(() {selected_index2=2;textsize=20;});},
+                                  widget.t_selected_index2==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                      onPressed:(){setState(() {widget.t_selected_index2=2;textsize=20;});},
                                       child: textwidget("A", 20, FontWeight.w700, Colors.black)),
                                   FloatingActionButton(elevation: 0.0,backgroundColor:
-                                  selected_index2==3?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                      onPressed:(){setState(() {selected_index2=3;textsize=25;});},
+                                  widget.t_selected_index2==3?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                      onPressed:(){setState(() {widget.t_selected_index2=3;textsize=25;});},
                                       child: textwidget("A",23, FontWeight.w700, Colors.black)),
 
                                 ]),
@@ -102,25 +100,25 @@ class _f_tabletPageState extends State<f_tabletPage> {
                                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                children:[
                                                   FloatingActionButton(elevation:0.0,backgroundColor:
-                                                  selected_index==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                                  widget.t_selected_index==1?Color.fromARGB(255, 113, 168, 47):Colors.white,
 
-                                                  onPressed:(){setState(() {selected_index=1;});},child: textwidget("1", 20, FontWeight.w300, textcolor)),
+                                                  onPressed:(){setState(() {widget.t_selected_index=1;});},child: textwidget("1", 20, FontWeight.w300, textcolor)),
                                                   // const SizedBox(width:20,),
                                                   FloatingActionButton(elevation:0.0,backgroundColor:
-                                                  selected_index==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                                  onPressed:(){setState(() {selected_index=2;});},child: textwidget("2", 20, FontWeight.w300, textcolor)),
+                                                  widget.t_selected_index==2?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                                  onPressed:(){setState(() {widget.t_selected_index=2;});},child: textwidget("2", 20, FontWeight.w300, textcolor)),
                                                   // const SizedBox(width:20,),
                                                   FloatingActionButton(elevation:0.0,backgroundColor:
-                                                  selected_index==3?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                                  onPressed:(){setState(() {selected_index=3;});},child: textwidget("3", 20, FontWeight.w300, textcolor)),
+                                                  widget.t_selected_index==3?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                                  onPressed:(){setState(() {widget.t_selected_index=3;});},child: textwidget("3", 20, FontWeight.w300, textcolor)),
+                                                  // const SizedBox(width:20,)
+                                                  FloatingActionButton(elevation:0.0,backgroundColor:
+                                                  widget.t_selected_index==4?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                                  onPressed:(){setState(() {widget.t_selected_index=4;});},child: textwidget("4", 20, FontWeight.w300, textcolor)),
                                                   // const SizedBox(width:20,),
                                                   FloatingActionButton(elevation:0.0,backgroundColor:
-                                                  selected_index==4?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                                  onPressed:(){setState(() {selected_index=4;});},child: textwidget("4", 20, FontWeight.w300, textcolor)),
-                                                  // const SizedBox(width:20,),
-                                                  FloatingActionButton(elevation:0.0,backgroundColor:
-                                                  selected_index==5?Color.fromARGB(255, 113, 168, 47):Colors.white,
-                                                  onPressed:(){setState(() {selected_index=5;});},child: textwidget("5", 20, FontWeight.w300, textcolor)),
+                                                  widget.t_selected_index==5?Color.fromARGB(255, 113, 168, 47):Colors.white,
+                                                  onPressed:(){setState(() {widget.t_selected_index=5;});},child: textwidget("5", 20, FontWeight.w300, textcolor)),
                                             ],),
                                            ),
                                         // ),
@@ -136,7 +134,7 @@ class _f_tabletPageState extends State<f_tabletPage> {
                                 Padding(
                                   padding: const EdgeInsets.all(10.0),
                                   child: Container(
-                                    child: textwidget(articles[article_name_in]['versions'][selected_index-1],
+                                    child: textwidget(articles[widget.t_article_index]['versions'][widget.t_selected_index-1],
                                         textsize, FontWeight.w200, Color.fromARGB(255, 243, 33, 138),)
                                   ),
                                 )

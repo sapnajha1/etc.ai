@@ -1,22 +1,22 @@
 
-
-
-import 'package:english/focus_screens/f_mobile.dart';
+import 'package:english/Screens/aap_bar.dart';
+import 'package:english/Screens/focus_screens/f_mobile.dart';
+import 'package:english/constWidget/textwidget.dart';
 import 'package:flutter/material.dart';
-import '../article_content.dart';
-import '../components/Article.dart';
-import '../components/Focus.dart';
-import '../constWidget/textwidget.dart';
-import 'aap_bar.dart';
+
+import '../../article_content.dart';
+import '../../components/Article.dart';
+import '../../components/Focus.dart';
+
 
 
 class MobilePage extends StatefulWidget {
-  const MobilePage({super.key, required this.title, required this.article_name_in});
+  const MobilePage({super.key, required this.title, });
 
 
 
   final String title;
-  final int article_name_in;
+  
 
   @override
   State<MobilePage> createState() => _MobilePageState();
@@ -72,7 +72,7 @@ class _MobilePageState extends State<MobilePage> {
                               children:[
 
                                 // FOCUS MODE
-                                InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_MobilePage()));} ,child: Focas_container(focustext:"Focus Mode",height:mq.height* 0.050,width:mq.width*0.350,fontsize:14)),
+                                InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_MobilePage(m_article_index: article_name_in, m_selected_index: selected_index, m_selected_index2: selected_index2)));} ,child: Focas_container(focustext:"Focus Mode",height:mq.height* 0.050,width:mq.width*0.350,fontsize:14)),
                                
 
                                 // INCREASING FONTSIZE

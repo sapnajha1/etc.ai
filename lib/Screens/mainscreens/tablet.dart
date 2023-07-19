@@ -1,12 +1,12 @@
-import 'package:english/focus_screens/f_tablet.dart';
-import 'package:flutter/material.dart';
 
-import '../article_content.dart';
-import '../components/Article.dart';
-import '../components/Focus.dart';
-import '../const/color.dart';
-import '../constWidget/textwidget.dart';
-import 'aap_bar.dart';
+import 'package:english/Screens/aap_bar.dart';
+import 'package:english/const/color.dart';
+import 'package:flutter/material.dart';
+import '../../article_content.dart';
+import '../../components/Article.dart';
+import '../../components/Focus.dart';
+import '../../constWidget/textwidget.dart';
+import '../focus_screens/f_tablet.dart';
 
 
 
@@ -63,7 +63,7 @@ class _tabletPageState extends State<tabletPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children:[
                             
-                            InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_tabletPage()));} ,child: Focas_container(focustext:"Focus Mode",height:mq.height* 0.080,width:mq.width*0.310,fontsize:28)),
+                            InkWell(onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>f_tabletPage(t_article_index: article_name_in,t_selected_index: selected_index, t_selected_index2: selected_index2,)));} ,child: Focas_container(focustext:"Focus Mode",height:mq.height* 0.080,width:mq.width*0.310,fontsize:28)),
 
                             const SizedBox(width:150),
                             Row(
